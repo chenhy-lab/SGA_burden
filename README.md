@@ -4,6 +4,6 @@ Share with the main script codes in the manuscript: *Comprehensive assessment of
 
 ## Burden Test and Prognosis Model
 
-![workflow](https://github.com/chenhy-lab/SGA_burden/pipeline_figure/workflow.png)
+![workflow](https://github.com/chenhy-lab/SGA_burden/blob/main/pipeline_figure/workflow.png)
 
 
