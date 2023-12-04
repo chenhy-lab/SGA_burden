@@ -1,0 +1,51 @@
+Dis_gene	Report_Variant	Mutation_type_(annovar)	Mutation_type_(VEP)	FILTER	FORMAT	diagnosis	uniq_id
+A2M	NM_000014:exon24:c.3017G>A(p.G1006D)	nonsynonymous SNV	missense_variant	PASS	0/1:111,68:180	case	case_19
+A2M	NM_000014:exon24:c.3029C>A(p.T1010N)	nonsynonymous SNV	missense_variant	PASS	0/1:129,134:263	control	case_365
+AAAS	NM_015665:exon16:c.1477C>T(p.R493C)	nonsynonymous SNV	missense_variant	PASS	0/1:134,71:206	control	case_15
+AAAS	NM_015665:exon10:c.939C>T(p.V313V)	synonymous SNV	synonymous_variant	PASS	0/1:58,43:101	case	case_21
+AAAS	NM_015665:exon1:c.63C>G(p.H21Q)	nonsynonymous SNV	missense_variant	PASS	0/1:137,121:259	control	case_28
+AAAS	NM_015665:exon16:c.1538A>G(p.H513R)	nonsynonymous SNV	missense_variant	PASS	0/1:89,83:172	case	case_36
+AAAS	NM_015665:exon10:c.939C>T(p.V313V)	synonymous SNV	synonymous_variant	PASS	0/1:58,44:102	control	case_62
+AAAS	NM_015665:exon1:c.103C>T(p.P35S)	nonsynonymous SNV	missense_variant	PASS	0/1:123,83:206	case	case_191
+AAAS	NM_015665:exon3:c.275T>A(p.V92E)	nonsynonymous SNV	missense_variant	PASS	0/1:117,66:183	control	case_277
+AAAS	NM_015665:exon10:c.955T>C(p.W319R)	nonsynonymous SNV	missense_variant	PASS	0/1:68,79:147	control	case_332
+AAAS	NM_015665:exon1:c.63C>G(p.H21Q)	nonsynonymous SNV	missense_variant	PASS	0/1:170,180:350	control	case_340
+AAAS	NM_015665:exon12:c.1158A>G(p.I386M)	nonsynonymous SNV	missense_variant	PASS	0/1:149,176:325	case	case_487
+AAAS	NM_015665:exon7:c.581G>A(p.R194Q)	nonsynonymous SNV	missense_variant	PASS	0/1:102,104:206	case	case_517
+AAAS	NM_015665:exon10:c.939C>T(p.V313V)	synonymous SNV	synonymous_variant	PASS	0/1:109,101:210	case	case_603
+AAAS	NM_015665:exon12:c.1157T>C(p.I386T)	nonsynonymous SNV	missense_variant	PASS	0/1:76,77:153	control	case_609
+AAGAB	NM_024666:exon2:c.218T>C(p.I73T)	nonsynonymous SNV	missense_variant	PASS	0/1:63,60:123	control	case_60
+AAGAB	NM_024666:exon9:c.852A>G(p.R284R)	synonymous SNV	synonymous_variant	PASS	0/1:137,80:217	control	case_61
+AAGAB	NM_024666:exon2:c.198A>G(p.K66K)	synonymous SNV	synonymous_variant	PASS	0/1:52,69:121	control	case_119
+AAGAB	NM_024666:exon2:c.227C>T(p.S76F)	nonsynonymous SNV	missense_variant	PASS	0/1:75,65:140	control	case_142
+AAGAB	NM_024666:exon6:c.540G>C(p.R180S)	nonsynonymous SNV	missense_variant	PASS	0/1:67,56:123	control	case_142
+AAGAB	NM_024666:exon8:c.820+55C>T	.	intron_variant	PASS	0/1:23,33:56	control	case_180
+AAGAB	NM_024666:exon8:c.756_757delinsA(p.T253Pfs*17)	frameshift substitution	frameshift_variant	PASS	0/1:106,88:194	control	case_299
+AAGAB	NM_024666:exon8:c.820+55C>T	.	intron_variant	PASS	0/1:33,39:72	case	case_317
+AAGAB	NM_024666:exon8:c.820+55C>T	.	intron_variant	PASS	0/1:30,30:60	control	case_390
+AAGAB	NM_024666:exon8:c.746T>G(p.L249X)	stopgain	stop_gained	PASS	0/1:127,91:218	control	case_400
+AAGAB	NM_024666:exon4:c.422T>G(p.L141R)	nonsynonymous SNV	missense_variant	PASS	0/1:65,45:110	control	case_422
+AAGAB	NM_024666:exon4:c.362-3T>C	.	splice_region_variant	PASS	0/1:32,39:71	control	case_465
+AAGAB	NM_024666:exon8:c.820+55C>T	.	intron_variant	PASS	0/1:28,38:66	control	case_537
+AARS2	NM_020745:exon19:c.2522G>A(p.R841Q)	nonsynonymous SNV	missense_variant	PASS	0/1:199,156:355	case	case_37
+AARS2	NM_020745:exon15:c.2074G>A(p.E692K)	nonsynonymous SNV	missense_variant	PASS	0/1:184,156:340	control	case_61
+AARS2	NM_020745:exon5:c.761G>C(p.G254A)	nonsynonymous SNV	missense_variant	PASS	0/1:70,92:162	control	case_62
+AARS2	NM_020745:exon9:c.1262G>A(p.R421Q)	nonsynonymous SNV	missense_variant	PASS	0/1:108,86:194	case	case_72
+AARS2	NM_020745:exon19:c.2522G>A(p.R841Q)	nonsynonymous SNV	missense_variant	PASS	0/1:164,176:340	control	case_113
+AARS2	NM_020745:exon6:c.904G>A(p.A302T)	nonsynonymous SNV	missense_variant	PASS	0/1:109,111:220	case	case_141
+AARS2	NM_020745:exon9:c.1191C>T(p.I397I)	synonymous SNV	splice_region_variant	PASS	0/1:111,106:217	control	case_151
+AARS2	NM_020745:exon16:c.2146-11C>T	.	intron_variant	PASS	0/1:59,66:125	control	case_203
+AARS2	NM_020745:exon13:c.1775G>A(p.R592Q)	nonsynonymous SNV	missense_variant	PASS	0/1:39,42:81	control	case_211
+AARS2	NM_020745:exon7:c.1064G>A(p.R355H)	nonsynonymous SNV	missense_variant	PASS	0/1:69,75:144	control	case_234
+AARS2	NM_020745:exon5:c.761G>C(p.G254A)	nonsynonymous SNV	missense_variant	PASS	0/1:84,84:168	control	case_250
+AARS2	NM_020745:exon11:c.1533C>T(p.D511D)	synonymous SNV	synonymous_variant	PASS	0/1:76,85:161	control	case_261
+AARS2	NM_020745:exon11:c.1533C>T(p.D511D)	synonymous SNV	synonymous_variant	PASS	0/1:84,73:157	control	case_265
+AARS2	NM_020745:exon7:c.1145C>T(p.T382I)	nonsynonymous SNV	missense_variant	PASS	0/1:48,61:109	control	case_277
+AARS2	NM_020745:exon13:c.1775G>A(p.R592Q)	nonsynonymous SNV	missense_variant	PASS	0/1:49,45:94	case	case_278
+AARS2	NM_020745:exon20:c.2630G>A(p.R877Q)	nonsynonymous SNV	missense_variant	PASS	0/1:111,115:226	control	case_297
+AARS2	NM_020745:exon12:c.1739G>A(p.R580Q)	nonsynonymous SNV	missense_variant	PASS	0/1:101,103:204	control	case_334
+AARS2	NM_020745:exon16:c.2165G>A(p.R722Q)	nonsynonymous SNV	missense_variant	PASS	0/1:41,86:127	control	case_337
+AARS2	NM_020745:exon18:c.2462C>T(p.S821F)	nonsynonymous SNV	missense_variant	PASS	0/1:73,70:143	control	case_352
+AARS2	NM_020745:exon18:c.2390C>T(p.A797V)	nonsynonymous SNV	missense_variant	PASS	0/1:74,58:132	case	case_437
+AARS2	NM_020745:exon18:c.2365-8C>G	.	splice_region_variant	PASS	0/1:47,52:99	control	case_514
+AARS2	NM_020745:exon5:c.872C>T(p.P291L)	nonsynonymous SNV	missense_variant	PASS	0/1:120,93:213	case	case_585

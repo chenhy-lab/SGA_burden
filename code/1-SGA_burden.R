@@ -1,8 +1,10 @@
+# download vcf file and transform the data to the file: demo_burden_data_SGA.txt
+
 source('./Function.R')
-panel_gene <- read.delim("./gene.lst")
-SGA627 <- rio::import('./SGA627.xlsx')
-NonSGA1317 <- rio::import('./NonSGA1317.xlsx')
-load('./sample_file_SGAburden.rda')
+panel_gene <- read.delim("data/gene.lst")
+SGA627 <- rio::import('data/SGA627.xlsx')
+NonSGA1317 <- rio::import('data/NonSGA1317.xlsx')
+sample_file <- rio::import('data/demo_burden_data_SGA.txt')
 
 # SGA BurdenTest
 case_size <- nrow(SGA627)
@@ -13,7 +15,7 @@ collapsing_res <- collapsing_res %>% mutate(risk_score=2*(-log10(Fisher_PTVp))+(
 collapsing_res_sig <- collapsing_res %>% dplyr::filter(Fisher_PTVp<0.05 | Fisher_MISp<0.05,PTV_OR>1 | MIS_OR>1 | PTV_OR=="Inf" | MIS_OR=="Inf",Fisher_SYNp>0.05,Fisher_NONp>0.05)
 
 # SGA BurdenTest by collapsing analyses for expected p
-if(F){
+if(T){
   mutation_dt <- sample_file[,c("Dis_gene","Mutation_type_(VEP)","Mutation_type_(annovar)","uniq_id")]
   group_list <- list()
   all_sample_name <- unique(sample_file$uniq_id)
@@ -32,7 +34,7 @@ if(F){
 }
 
 ## expected pvalue
-if(F){
+if(T){
   library(snowfall)
   sfInit(parallel = TRUE, cpus = 10, slaveOutfile = "./snowfall_log.txt")  #initialize
   sfLibrary(tidyverse)
@@ -43,11 +45,11 @@ if(F){
     return(collapsing_res)
   })
   sfStop()
-  save(collapsing_res_list,file='./exp_collapsing_res_list_SGA.rda')
+  save(collapsing_res_list,file='data/exp_collapsing_res_list_SGA.rda')
 }
 
-if(F){
-  load('./exp_collapsing_res_list_SGA.rda')
+if(T){
+  load('data/exp_collapsing_res_list_SGA.rda')
   burdenscore_list <- lapply(collapsing_res_list, function(collapsing_res){
     risk_score=2*(-log10(collapsing_res$Fisher_PTVp))+(-log10(collapsing_res$Fisher_MISp))
     return(risk_score)
@@ -55,10 +57,10 @@ if(F){
   burdenscore <- bind_cols(burdenscore_list) %>% as.data.frame()
   colnames(burdenscore) <- 1:10000
   rownames(burdenscore) <- collapsing_res_list[[1]]$gene
-  save(burdenscore,file = './burdenscore_SGA_10000.rda')
+  save(burdenscore,file = 'data/burdenscore_SGA_10000.rda')
 }
 
-load('./burdenscore_SGA_10000.rda')
+load('data/burdenscore_SGA_10000.rda')
 burdenscore <- as.matrix(burdenscore) %>% .[rowSums(.)!=0,]
 collapsing_res <- collapsing_res %>% dplyr::filter(gene %in% rownames(burdenscore))
 rownames(collapsing_res) <- collapsing_res$gene

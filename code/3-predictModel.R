@@ -1,9 +1,9 @@
 # Predict model
 source('./Function.R')
-dt_score <- openxlsx::read.xlsx('./dt_score.xlsx')
-use_dt_case <- openxlsx::read.xlsx('./use_SGA-627case-prognosis.xlsx',sheet='use_dt_case')
-use_dt_ctr <- openxlsx::read.xlsx('./use_SGA-627case-prognosis.xlsx',sheet='use_dt_ctr')
-dt_vali <- rio::import('./dt_vali.xlsx') 
+dt_score <- openxlsx::read.xlsx('data/dt_score.xlsx')
+use_dt_case <- openxlsx::read.xlsx('data/use_SGA-627case-prognosis.xlsx',sheet='use_dt_case')
+use_dt_ctr <- openxlsx::read.xlsx('data/use_SGA-627case-prognosis.xlsx',sheet='use_dt_ctr')
+dt_vali <- rio::import('data/dt_vali.xlsx') 
 dt <- plyr::rbind.fill(use_dt_case,use_dt_ctr)
 dt <- merge(dt,dt_score,by.x='sample',by.y='Sample_name',all.x=T)
 dt <- dt %>% mutate(score=ifelse(is.na(score),0,score))

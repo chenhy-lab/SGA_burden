@@ -1,7 +1,9 @@
+# download vcf file and transform the data to the file: demo_burden_data_SGAprognosis.txt
+
 source('./Function.R')
-panel_gene <- read.delim("./gene.lst")
-SGA400 <- rio::import('./SGA400.xlsx')
-load('./sample_file_SGAprognosisburden.rda')
+panel_gene <- read.delim("data/gene.lst")
+SGA400 <- rio::import('data/SGA400.xlsx')
+sample_file <- rio::import('data/demo_burden_data_SGAprognosis.txt')
 
 # SGA Prognosis BurdenTest
 case_size <- nrow(SGA400 %>% dplyr::filter(Group=='Y'))
@@ -12,7 +14,7 @@ collapsing_res_sig <- collapsing_res %>% dplyr::filter(Fisher_PTVp<0.05 | Fisher
 collapsing_res_sig
 
 # Make permutation SGAPrognosisBurdenTest by collapsing analyses for expected p
-if(F){
+if(T){
   mutation_dt <- sample_file[,c("Dis_gene","Mutation_type_(VEP)","Mutation_type_(annovar)","uniq_id")]
   group_list <- list()
   all_sample_name <- unique(sample_file$uniq_id)
@@ -30,7 +32,7 @@ if(F){
   }
 }
 ## expected pvalue
-if(F){
+if(T){
   library(snowfall)
   sfInit(parallel = TRUE, cpus = 10, slaveOutfile = "./snowfall_log.txt")  #initialize
   sfLibrary(tidyverse)
@@ -41,11 +43,11 @@ if(F){
     return(collapsing_res)
   })
   sfStop()
-  save(collapsing_res_list,file='./exp_collapsing_res_list_SGAprognosis.rda')
+  save(collapsing_res_list,file='data/exp_collapsing_res_list_SGAprognosis.rda')
 }
 
-if(F){
-  load('./exp_collapsing_res_list_SGAprognosis.rda')
+if(T){
+  load('data/exp_collapsing_res_list_SGAprognosis.rda')
   burdenscore_list <- lapply(collapsing_res_list, function(collapsing_res){
     risk_score=2*(-log10(collapsing_res$Fisher_PTVp))+(-log10(collapsing_res$Fisher_MISp))
     return(risk_score)
@@ -53,10 +55,10 @@ if(F){
   burdenscore <- bind_cols(burdenscore_list) %>% as.data.frame()
   colnames(burdenscore) <- 1:10000
   rownames(burdenscore) <- collapsing_res_list[[1]]$gene
-  save(burdenscore,file = 'data/review20230811/burdenscore_SGAprognosis_10000.rda')
+  save(burdenscore,file = 'data/burdenscore_SGAprognosis_10000.rda')
 }
 
-load('./burdenscore_SGAprognosis.rda')
+load('data/burdenscore_SGAprognosis.rda')
 burdenscore <- as.matrix(burdenscore) %>% .[rowSums(.)!=0,]
 collapsing_res <- collapsing_res %>% dplyr::filter(gene %in% rownames(burdenscore))
 rownames(collapsing_res) <- collapsing_res$gene
